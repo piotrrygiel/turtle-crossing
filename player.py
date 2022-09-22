@@ -1,14 +1,14 @@
 from turtle import Turtle
 
-STARTING_POSITION = (0, -280)
-MOVE_DISTANCE = 10
+STARTING_POSITION = (0, -270)
+MOVE_DISTANCE = 30
 FINISH_LINE_Y = 280
 
 
 class Player(Turtle):
-    def __init__(self):
+    def __init__(self, shape):
         super().__init__()
-        self.shape("turtle")
+        self.shape(shape)
         self.seth(90)
         self.penup()
         self.goto(STARTING_POSITION)
@@ -18,3 +18,9 @@ class Player(Turtle):
 
     def finish(self):
         self.goto(STARTING_POSITION)
+
+    def is_at_finish_line(self):
+        if self.ycor() > FINISH_LINE_Y:
+            return True
+        else:
+            return False
