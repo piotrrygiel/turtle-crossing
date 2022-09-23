@@ -30,7 +30,12 @@ while game_is_on:
     spawn_delay += 40
     car_manager.move(speed_multiplier)
 
-    for car in car_manager.all_cars:
+    for car in car_manager.right_cars:
+        if player.distance(car) < 25:
+            scoreboard.game_over()
+            game_is_on = False
+
+    for car in car_manager.left_cars:
         if player.distance(car) < 25:
             scoreboard.game_over()
             game_is_on = False

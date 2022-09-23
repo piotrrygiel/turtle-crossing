@@ -12,7 +12,7 @@ class Environment(Turtle):
         self.draw_lines()
 
     def draw_lines(self):
-        for i in range(18):
+        for i in range(17):
             self.goto(x=-300, y=self.ycor())
             self.penup()
             self.goto(x=300, y=self.ycor() + INCREMENT)
